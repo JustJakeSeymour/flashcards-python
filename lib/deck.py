@@ -5,5 +5,5 @@ class Deck:
     def count(self):
         return len(self.cards)
     
-    def cards_in_category(category):
-        pass
+    def cards_in_category(self, category):
+        return [card for card in self.cards if card.category == category]
