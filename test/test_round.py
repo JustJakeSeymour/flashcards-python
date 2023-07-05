@@ -35,3 +35,6 @@ class TestRound(unittest.TestCase):
     
     def test_round_percent_correct_by_category_method(self):
         pass
+    
+if __name__ == '__main__':
+        unittest.main()
