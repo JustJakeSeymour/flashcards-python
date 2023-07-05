@@ -1,6 +1,7 @@
 import unittest
 import sys
 sys.path.append('/Users/jseymour22/_projects/flashcards-python/lib/')
+
 from card import Card
 
 class TestCard(unittest.TestCase):
