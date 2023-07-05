@@ -27,5 +27,9 @@ class TestCard(unittest.TestCase):
         # Test has correct method
         self.assertFalse(self.turn1.is_correct())
 
+    def test_turn_feedback_method(self):
+         # test1.feedback returns "Incorrect."
+         self.assertEqual(self.turn1.feedback, "Incorrect.")
+         
 if __name__ == '__main__':
         unittest.main()
