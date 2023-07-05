@@ -9,20 +9,31 @@ from card import Card
 
 class TestRound(unittest.TestCase):
     def setUp(self):
-        pass
-    
+        self.card1 = Card('Do you know Python?', 'I do now!', 'meta')
+        self.card2 = Card('How are you?', 'Okay', 'meta')
+        self.card3 = Card('What is the name of your cat?', 'Conrad', 'names')
+        self.card4 = Card('What is your name?', 'Jake', 'names')
+        cards = [self.card1, self.card2, self.card3, self.card4]
+        self.deck = Deck(cards)
+        self.round = Round(self.deck)
+        
     def test_round_is_round(self):
-        pass
+        # Round is of Round class
+        self.assertIsInstance(self.round, Round)    
     
     def test_round_has_turns(self):
-        pass
+        # Round.turns is a list
+        self.assertEqual(self.round.turns, [])
     
     def test_round_current_card_method(self):
-        pass
-    
+        # Round.current_card is the index 0 of deck
+        self.assertEqual(self.round.current_card, self.card1)
+
     def test_round_take_turn_method(self):
         # take turn method requires 'guess'
-        pass
+        new_turn = self.round.take_turn('I do now!')
+        self.assertIsInstance(new_turn, Turn)
+        self.assertTrue(new_turn.is_correct)
     
     def test_round_number_correct_method(self):
         pass
