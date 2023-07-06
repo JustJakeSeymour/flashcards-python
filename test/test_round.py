@@ -28,6 +28,8 @@ class TestRound(unittest.TestCase):
     def test_round_current_card_method(self):
         # Round.current_card is the index 0 of deck
         self.assertEqual(self.round.current_card(), self.card1)
+        # Confirm .pop removes card from deck
+        self.assertEqual(self.round.current_card(), self.card2)
 
     def test_round_take_turn_method(self):
         # take turn method requires 'guess'
@@ -41,7 +43,6 @@ class TestRound(unittest.TestCase):
         the_turn = self.round.take_turn('I do now!')
         self.assertEqual(self.round.turns, [the_turn])
 
-    
     def test_round_number_correct_method(self):
         self.assertEqual(self.round.number_correct(), 0)
 
