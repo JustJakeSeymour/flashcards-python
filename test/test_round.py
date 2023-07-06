@@ -44,7 +44,7 @@ class TestRound(unittest.TestCase):
     
     def test_round_number_correct_method(self):
         self.assertEqual(self.round.number_correct(), 0)
-        
+
         turn1 = self.round.take_turn('I do now!')
         turn2 = self.round.take_turn('Not Okay')
         
@@ -53,7 +53,13 @@ class TestRound(unittest.TestCase):
         self.assertEqual(self.round.number_correct(), 1)
     
     def test_round_number_correct_by_category_method(self):
-        pass
+        self.round.take_turn('I do now!')
+        self.round.take_turn('Not Okay')
+        self.round.take_turn('Conrad')
+        self.round.take_turn('Jake')
+        
+        self.assertEqual(self.round.number_correct(), 3)
+        self.assertEqual(self.round.number_correct_by_category('names'), 2)
     
     def test_round_percent_correct_method(self):
         pass
