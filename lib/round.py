@@ -12,4 +12,6 @@ class Round:
             return None
         
     def take_turn(self, guess):
-        return Turn(self.current_card(), guess)
+        current_turn = Turn(self.current_card(), guess)
+        self.turns.append(current_turn)
+        return current_turn

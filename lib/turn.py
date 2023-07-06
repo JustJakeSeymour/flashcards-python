@@ -5,3 +5,9 @@ class Turn:
 
     def is_correct(self):
         return self.card.answer == self.guess
+    
+    def feedback(self):
+        if self.is_correct():
+            return 'Correct.'
+        else:
+            return 'Incorrect.'

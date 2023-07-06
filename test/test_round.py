@@ -34,9 +34,19 @@ class TestRound(unittest.TestCase):
         new_turn = self.round.take_turn('I do now!')
         self.assertIsInstance(new_turn, Turn)
         self.assertTrue(new_turn.is_correct)
+
+    def test_round_holds_past_turn(self):
+        # after take_turn method, round.turns has Turn obj
+        self.assertEqual(self.round.turns, [])
+        the_turn = self.round.take_turn('I do now!')
+        self.assertEqual(self.round.turns, [the_turn])
+
     
     def test_round_number_correct_method(self):
-        pass
+        turn1 = self.round.take_turn('I do now!')
+        turn2 = self.round.take_turn('Not Okay')
+        self.assertTrue(turn1.is_correct)
+        self.assertFalse(turn2.is_correct)
     
     def test_round_number_correct_by_category_method(self):
         pass
