@@ -43,10 +43,14 @@ class TestRound(unittest.TestCase):
 
     
     def test_round_number_correct_method(self):
+        self.assertEqual(self.round.number_correct(), 0)
+        
         turn1 = self.round.take_turn('I do now!')
         turn2 = self.round.take_turn('Not Okay')
-        self.assertTrue(turn1.is_correct)
-        self.assertFalse(turn2.is_correct)
+        
+        self.assertTrue(turn1.is_correct())
+        self.assertFalse(turn2.is_correct())
+        self.assertEqual(self.round.number_correct(), 1)
     
     def test_round_number_correct_by_category_method(self):
         pass

@@ -15,3 +15,15 @@ class Round:
         current_turn = Turn(self.current_card(), guess)
         self.turns.append(current_turn)
         return current_turn
+    
+    def correct_turns(self):
+        correct = []
+        for turn in self.turns:
+            if turn.is_correct():
+                correct.append(turn)
+            else:
+                pass
+        return correct
+            
+    def number_correct(self):
+        return len(self.correct_turns())
