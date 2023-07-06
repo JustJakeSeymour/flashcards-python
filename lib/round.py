@@ -28,4 +28,11 @@ class Round:
     def number_correct(self):
         return len(self.correct_turns())
     
-    
+    def number_correct_by_category(self, category):
+        category_correct = []
+        for turn in self.correct_turns():
+            if turn.card.category == category:
+                category_correct.append(turn)
+            else:
+                pass
+        return len(category_correct)
