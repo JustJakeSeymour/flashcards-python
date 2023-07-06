@@ -27,7 +27,7 @@ class TestRound(unittest.TestCase):
     
     def test_round_current_card_method(self):
         # Round.current_card is the index 0 of deck
-        self.assertEqual(self.round.current_card, self.card1)
+        self.assertEqual(self.round.current_card(), self.card1)
 
     def test_round_take_turn_method(self):
         # take turn method requires 'guess'
